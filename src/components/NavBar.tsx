@@ -31,7 +31,7 @@ const NavBar = () => {
       </div>
 
       {isOpen && (
-        <motion.div className='w-full shadow-md mb-2'
+        <motion.div className='w-'
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20,}}
