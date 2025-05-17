@@ -16,15 +16,15 @@ const NavBar = () => {
     <nav className='w-full'>
       <div className=' w-full p-2 flex justify-between items-center md:shadow-md'>
         <div className='flex'>
-          <img src={Logo} className='w-8 sm:w-10 md:w-15 lg:w-17 h-5 sm:h-6 md:h-8 lg:h-10'/>
-          <h1 className='text-base sm:text-xl md:text-3xl lg:text-4xl lg:mt-0.5 ml-1 font-bold text-[#333333] '>Furniro</h1>
+          <img src={Logo} className='w-8 sm:w-10 md:w-15 lg:w-17 2xl:w-22 h-5 sm:h-6 md:h-8 lg:h-10 2xl:h-12'/>
+          <h1 className='text-base sm:text-xl md:text-3xl lg:text-4xl 2xl:text-5xl lg:mt-0.5 ml-1 font-bold text-[#333333] '>Furniro</h1>
         </div>
-        <ul className='hidden md:flex text-lg lg:text-xl  justify-between  gap-10'>
+        <ul className='hidden md:flex text-lg lg:text-xl xl:text-2xl  justify-between  gap-10'>
           <Link to={"/"}>Home</Link>
           <Link to={"/products"}>Products</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/contact"}>Contact</Link>
-          <Link to={"/cart"}><IoCartOutline className='sm:text-xl md:text-2xl mt-0.5'/></Link>
+          <Link to={"/cart"}><IoCartOutline className='sm:text-xl md:text-2xl xl:text-3xl mt-0.5'/></Link>
         </ul>
         <button onClick={handleToggle} className='md:hidden'>
           {!isOpen? <CiMenuBurger className='sm:text-xl'/> : <IoMdClose className='sm:text-xl'/>  }</button>
