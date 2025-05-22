@@ -8,6 +8,7 @@ type Product = {
    description: string
    image: string
    price: number
+   longDescription: string
 }
 
 const useProducts = () => {
