@@ -83,14 +83,14 @@ const Contact = () => {
     <div>
       <NavBar />
 
-      <div className="text-[#333333] font-bold text-base bg-cover bg-center w-full h-40 flex flex-col justify-center items-center">
+      <div className="text-[#333333] font-bold text-base bg-cover bg-center w-full h-40 flex flex-col justify-center items-center bg-[#F9F1E7]">
         <h1 className="text-2xl md:text-4xl xl:text-5xl">Contact</h1>
         <div className="w-full sm:text-xl md:text-2xl xl:text-3xl  flex justify-center items-center gap-2 mt-2">
           <Link to="/">Home</Link>
           <IoIosArrowForward />
           <Link to="/contact">Contact</Link>
         </div>
-        <div className="my-2 lg:my-5 w-full h-[1px] bg-[#333333]"></div>
+        
       </div>
 
       <section className="py-12 px-4 md:px-16 lg:px-32">
@@ -100,7 +100,7 @@ const Contact = () => {
           An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
         </p>
 
-        <div className="flex flex-col md:items-center md:justify-center lg:flex-row justify-between items-start gap-10 mt-12">
+        <div className="flex flex-col md:items-center md:justify-center lg:flex-row justify-between xl:justify-evenly items-start gap-10 mt-12">
           <div className="space-y-8 w-50%flex flex-col md:items-center md:justify-center lg:w-1/2">
             <div>
               <h2 className="font-semibold text-lg">📍 Address</h2>

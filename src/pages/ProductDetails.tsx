@@ -50,7 +50,7 @@ const ProductDetails = () => {
   return (
     <div>
       <NavBar/>
-      <div >
+      <div className="flex flex-col" >
         <div className="bg-[#F9F1E7] w-full h-10 sm:h-12 md:h-15 lg:h-18 xl:h-20 text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl flex justify-start items-center px-4">
           <Link to={"/"} className=" text-[#9f9f9f] ">Home</Link>
           <IoIosArrowForward className=" mt-0.5"/>
@@ -60,18 +60,19 @@ const ProductDetails = () => {
           <h1 className=" ml-1">{product.name}</h1>
         </div>
         {/*  Product Details */}
-        <div className="flex flex-col items-center justify-center w-full">  
-            <div className="w-full flex flex-col items-center justify-center  mt-10">
+        <div className="flex flex-col md:flex-row  items-center justify-center md:justify-center gap-5 md:items-start w-full">  
               <img src={product.image} alt={product.name} 
-              className="w-60 sm:w-80 md:w-90 lg:w-100 xl:w-[500px]  rounded-2xl"/>
-            </div>
+              className="w-60 sm:w-80 md:w-90 lg:w-100 xl:w-[500px] mt-6   rounded-2xl"/>
             <div className="text-base  flex text-[#333333] flex-col w-60 sm:w-80 md:w-90 lg:w-100 xl:w-[500px]  mt-5 mb-10">
               <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl ">{product.name}</h1>
               <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl  md:my-2">{product.longDescription}</h1>
               <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl  font-bold">{product.price}$</h1>
-              <button className="self-center bg-[#F9F1E7] font-semibold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-40 sm:w-50 md:w-60 lg:w-70 xl:w-80 h-10 sm:h-12 md:h-15 lg:h-18 xl:h-20 rounded-2xl sm:mt-5 ">Add to Cart</button>
             </div>
         </div>
+        <Link 
+        to={"/cart"}
+              className="text-center text-[#B88E2F] font-semibold xl:mt-4 text-sm md:text-base lg:text-lg xl:text-2xl self-center  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
+              >Add to Cart</Link>
 
         {/* Related Products */}
         <div>
