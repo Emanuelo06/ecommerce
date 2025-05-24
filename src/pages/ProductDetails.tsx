@@ -60,18 +60,25 @@ const ProductDetails = () => {
           <h1 className=" ml-1">{product.name}</h1>
         </div>
         {/*  Product Details */}
-        <div className="flex flex-col md:flex-row  items-center justify-center md:justify-center gap-5 md:items-start w-full">  
-              <img src={product.image} alt={product.name} 
-              className="w-60 sm:w-80 md:w-90 lg:w-100 xl:w-[500px] mt-6   rounded-2xl"/>
+        <div className="flex flex-col md:flex-row  items-center justify-center md:justify-center gap-5 md:items-start w-full md:mt-10 mt-5">  
+         <div className="w-60 sm:w-80 md:w-96 xl:w-[500px] h-60 sm:h-80 md:h-96 xl:h-[500px] aspect-[3/4] rounded-2xl overflow-hidden">
+            <img 
+              src={product.image}
+              alt={product.name}
+              className="w-full h-full object-cover object-center"
+            />
+         </div>
+
+
             <div className="text-base  flex text-[#333333] flex-col w-60 sm:w-80 md:w-90 lg:w-100 xl:w-[500px]  mt-5 mb-10">
-              <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl ">{product.name}</h1>
-              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl  md:my-2">{product.longDescription}</h1>
-              <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl  font-bold">{product.price}$</h1>
+              <h1 className="font-bold text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-3xl ">{product.name}</h1>
+              <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl  md:my-2">{product.longDescription}</h1>
+              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl  font-bold">{product.price}$</h1>
             </div>
         </div>
         <Link 
         to={"/cart"}
-              className="text-center text-[#B88E2F] font-semibold xl:mt-4 text-sm md:text-base lg:text-lg xl:text-2xl self-center  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
+              className="text-center text-[#B88E2F] font-semibold md:mt-5 xl:mt-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl self-center  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
               >Add to Cart</Link>
 
         {/* Related Products */}
@@ -85,17 +92,19 @@ const ProductDetails = () => {
         {visibleProducts.map((relatedProduct) => (
           <div
             key={relatedProduct.id}
-            className="w-40 sm:w-50 md:w-60 lg:w-80  bg-[#F4F5F7] flex flex-col"
+            className="w-40 sm:w-50 md:w-60 lg:w-70  bg-[#F4F5F7] flex flex-col"
           >
-            <img
-              src={relatedProduct.image}
-              alt="product image"
-              className="object-cover w-40 sm:w-50 md:w-60 lg:w-80   h-40 sm:h-50 md:h-60 lg:h-80 "
-            />
+            <div className="w-40 sm:w-48 md:w-60 lg:w-72 h-40 sm:h-48 md:h-60 lg:h-72">
+              <img
+                src={relatedProduct.image}
+                alt="product image"
+                className="object-cover object-center w-40 sm:w-48 md:w-60 lg:w-72 h-40 sm:h-48 md:h-60 lg:h-72"
+              />
+            </div>
             <div className="p-2 pb-5 xl:p-5 xl:pb-8 flex flex-col">
-              <h1 className="font-bold md:text-lg lg:text-2xl xl:text-3xl   text-[#333333]">{relatedProduct.name}</h1>
-              <p className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl  text-[#666666]">{relatedProduct.description}</p>
-              <h1 className="font-bold md:text-lg lg:text-2xl xl:text-3xl  text-[#333333] mb-2 lg:mb-5 2xl:mb-10">${relatedProduct.price}</h1>
+       <h1 className="font-bold md:text-lg lg:text-2xl 2xl:text-3xl   text-[#333333]">{product.name}</h1>
+              <p className="text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl  text-[#666666]">{product.description}</p>
+              <h1 className="font-bold md:text-lg lg:text-2xl 2xl:text-3xl  text-[#333333] mb-2 lg:mb-5 2xl:mb-10">${product.price}</h1>
               <Link to={`/product/${relatedProduct.id}`}
               className="text-center text-[#B88E2F] font-semibold text-sm md:text-base lg:text-lg xl:text-2xl  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
               >See details</Link>
@@ -106,7 +115,7 @@ const ProductDetails = () => {
 
       <div className="flex justify-center mt-6">
         <Link to="/products"
-          className="text-[#B88E2F] text-base md:text-lg  font-semibold lg:text-2xl xl:text-3xl  border border-[#B88E2F] py-2 md:py-3 lg:py-5 px-8 md:px-12 lg:px-20 lg:mt-5 hover:bg-[#B88E2F] hover:text-white transition"
+          className="text-[#B88E2F] text-base md:text-lg  font-semibold lg:text-xl xl:text-2xl  border border-[#B88E2F] py-2 md:py-3 lg:py-5 px-8 md:px-12 lg:px-20 lg:mt-5 hover:bg-[#B88E2F] hover:text-white transition"
         >
           Show More
         </Link>

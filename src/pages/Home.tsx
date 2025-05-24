@@ -15,16 +15,16 @@ const Home = () => {
         <p className="text-center text-sm sm:text-base md:text-lg lg:text-2xl 2xl:mb-10 text-[#666666]">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         <div className="flex flex-col justify-center sm:flex-row items-center gap-4 mt-4 px-2">
           <div className="">
-            <img src={Dining} alt="dining-img" className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-100 2xl:w-[450px]"/>
-             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl  mt-3 text-[#333333]">Dining</h1>
+            <img src={Dining} alt="dining-img" className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-90 2xl:w-[450px]"/>
+             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  mt-3 text-[#333333]">Dining</h1>
           </div>
           <div>
-            <img src={Living} alt="living-img" className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-100 2xl:w-[450px]" />
-             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl   mt-3  text-[#333333]">Living</h1>
+            <img src={Living} alt="living-img" className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-90 2xl:w-[450px]" />
+             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl   mt-3  text-[#333333]">Living</h1>
           </div>
           <div>
-            <img src={Bedroom} alt="bedroom-img"  className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-100 2xl:w-[450px]"/>
-             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl   mt-3 text-[#333333]">Bedroom</h1>
+            <img src={Bedroom} alt="bedroom-img"  className="w-40 sm:w-50 md:w-60 lg:w-80 xl:w-90 2xl:w-[450px]"/>
+             <h1 className="text-center font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl   mt-3 text-[#333333]">Bedroom</h1>
           </div>
           
 
