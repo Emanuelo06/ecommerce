@@ -2,10 +2,12 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import useProducts from "../components/useProducts"
 import { Link } from "react-router-dom"
+import { useCart } from "../context/CartContext"
 
 const Products = () => {
   
   const products = useProducts()
+  const { addToCart } = useCart()
   return (
     <div>
       <NavBar/>
@@ -31,9 +33,22 @@ const Products = () => {
               <h1 className="font-bold md:text-lg lg:text-2xl 2xl:text-3xl   text-[#333333]">{product.name}</h1>
               <p className="text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-2xl  text-[#666666]">{product.description}</p>
               <h1 className="font-bold md:text-lg lg:text-2xl 2xl:text-3xl  text-[#333333] mb-2 lg:mb-5 2xl:mb-10">${product.price}</h1>
-              <Link to={`/product/${product.id}`}
-              className="text-center text-[#B88E2F] font-semibold text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
-              >See details</Link>
+              <div className="flex flex-col gap-2">
+                <Link to={`/product/${product.id}`}
+                  className="text-center text-[#B88E2F] font-semibold text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
+                >See details</Link>
+                <button
+                  onClick={() => addToCart({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image
+                  })}
+                  className="text-center text-[#B88E2F] font-semibold text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}

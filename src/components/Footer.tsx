@@ -1,7 +1,7 @@
  import { Link } from "react-router-dom"
 const Footer = () => {
   return (
-    <div>
+    <div className="self-end">
       <div className="bg-[rgb(102,102,102)] w-full h-[1px] lg:mt-5"/>
       <div className="flex justify-between">
       <div className="p-2 w-[40%]">

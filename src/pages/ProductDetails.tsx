@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import { IoIosArrowForward } from "react-icons/io";
 import { useState, useEffect } from "react"
+import { useCart } from "../context/CartContext";
 
 
 type Product = {
@@ -18,6 +19,7 @@ type Product = {
 const ProductDetails = () => {
   const products = useProducts()
   const {id} = useParams()
+  const { addToCart } = useCart();
 
   // Always call hooks first!
   const [maxToShow, setMaxToShow] = useState(1)
@@ -76,10 +78,17 @@ const ProductDetails = () => {
               <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl  font-bold">{product.price}$</h1>
             </div>
         </div>
-        <Link 
-        to={"/cart"}
-              className="text-center text-[#B88E2F] font-semibold md:mt-5 xl:mt-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl self-center  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
-              >Add to Cart</Link>
+        <button
+        onClick={() => addToCart({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image
+        })}
+        className="text-center text-[#B88E2F] font-semibold md:mt-5 xl:mt-10 text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl self-center  border border-[#B88E2F] py-1 px-6 sm:py-2 xl:py-3 sm:px-8 xl:px-10 hover:bg-[#B88E2F] hover:text-white transition"
+      >
+        Add to Cart
+      </button>
 
         {/* Related Products */}
         <div>
