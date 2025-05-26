@@ -2,7 +2,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import ContactForm from "../components/COntactForm";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   
